@@ -10,8 +10,8 @@
       crossorigin="anonymous"
     />
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="src/styles.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="src/styles.css" />
   </head>
 
   <body>
@@ -19,43 +19,41 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-      <form id=newLocale>
+      <form id="newLocale">
         <input
           type="city"
           placeholder="Enter a city..."
           class="form-control"
           autofocus
           id="enter-city"
-         /><button id=>Current Location</button>
+         /><button id="coordsUrl">Current Location</button>
       </form>
   <div class="container">
         <div class="row">
-           <span class="col-6" id="currentTemp">
-            21° | 19°
+          <span class="col-6" id="currentTemp">
+            19°
           <img src="images/sun.png" width="180" />
         <p class="units">
           <a href="#" id="celsiusLink">°C</a> | 
           <a href="#" id="fahrLink">°F</a>
         </p></span>
           <div class="col-6">
-            <p class="city">
-            Vancouver, BC
+            <p id="city">Vancouver, BC
             </p>
-            <div class="time" id="current-day">  
+          <div class="time" id="current-day">  
     Friday 4:00 p.m.
-    <br/>
-    Sunny
+  
           </div>
       
         <ul>
-            <li>
-            Precipitation: 0%
+            <li id="description">
+            
             </li>
             <li>
-        Humidity: 41%
+        Humidity: <span id="humid">41</span>%
             </li>
             <li>
-        Wind: 8 km/h
+        Wind: <span id="wind">8 </span>km/h
             </li>
           </ul>
          </div>

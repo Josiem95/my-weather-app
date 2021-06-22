@@ -1,0 +1,85 @@
+body {
+  background: #155263;
+}
+button {
+  background-color: #fff;
+  border-radius: 20px;
+  border: 2px solid #155263;
+  transition: all 200ms ease;
+  opacity: 1;
+  color: black;
+}
+button:hover {
+  opacity: 1;
+  background-color: #fcbf49;
+  color: #fff;
+}
+
+.form-control {
+  margin: 10px 0px 30px 0px;
+  border: 2px solid #fcbf49;
+}
+.form-control:focus {
+  border-color: #fcbf49;
+  -webkit-box-shadow: none;
+}
+.has-error .form-control:focus {
+  -webkit-box-shadow: none;
+}
+.card {
+  border: 5px solid #fcbf49;
+}
+.currentTemp {
+  text-align: left;
+}
+.row {
+  font-size: 35px;
+  font-weight: bolder;
+  text-align: right;
+}
+
+body {
+  font-family: "Miller Text", Georgia, serif;
+}
+ul {
+  list-style-type: none;
+  text-align: right;
+  font-size: 15px;
+  margin-top: 20px;
+  font-weight: 10;
+}
+
+.time {
+  text-align: right;
+  font-size: 20px;
+}
+
+img {
+  margin: 10px 50px;
+}
+hr {
+  background-color: transparent;
+  border-top: 9px dotted #155263;
+}
+.days {
+  text-align: center;
+  font-size: 30px;
+}
+.weekend {
+  margin-top: 15px;
+}
+.temp {
+  font-size: 15px;
+  text-align: center;
+}
+footer {
+  font-size: 12px;
+  padding: 25px 0px 0px;
+  color: #155263;
+  text-align: center;
+}
+
+.units {
+  text-align: left;
+  font-size: 18px;
+}
