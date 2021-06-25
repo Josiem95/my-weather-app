@@ -19,15 +19,20 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-      <form id="newLocale">
+       <form class="d-flex search-bar" id="newLocale">
         <input
-          type="city"
+          type="text"
           placeholder="Enter a city..."
           class="form-control"
           autofocus
           id="enter-city"
-         /><button type="button" id="coordsUrl">Current Location</button>
-      </form>
+         />
+        <input
+        id="search"
+      type="submit"
+  class="form-control search btn"
+value="Search"
+/></form>
   <div class="container">
         <div class="row">
           <span class="col-6" id="currentTemp">
@@ -102,7 +107,7 @@
             </div>
             <footer>Designed by <a href="https://github.com/Josiem95/my-weather-app">Josie Mortison</a></footer>
             </div>
-       
-    <script src="src/index.js"></script>
+
+    <script src="index.js"></script>
   </body>
 </html>

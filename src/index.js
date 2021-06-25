@@ -48,8 +48,10 @@ function searchCity(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
-  searchCity(city);
+  let cityInput = document.querySelector("#enter-city").value;
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = cityInput;
+  searchCity(cityInput);
 }
 
 function searchLocation(position) {
@@ -84,7 +86,7 @@ function displayWeather(response) {
 let enterCity = document.querySelector("#newLocale");
 enterCity.addEventListener("submit", handleSubmit);
 
-let coordsUrl = document.querySelector("#coordsUrl");
+let enterCity = document.querySelector("#newLocale");
 coordsUrl.addEventListener("click", getCurrentCity);
 
 searchCity("North Vancouver");
