@@ -67,6 +67,7 @@ function getCurrentCity(event) {
 }
 
 function displayWeather(response) {
+  let iconElement = document.querySelector("#current-icon");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#currentTemp").innerHTML = `${Math.round(
     response.data.main.temp
@@ -82,6 +83,10 @@ function displayWeather(response) {
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 let enterCity = document.querySelector("#newLocale");
 enterCity.addEventListener("submit", handleSubmit);
