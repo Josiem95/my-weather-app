@@ -75,17 +75,13 @@ function displayWeather(response) {
   document.querySelector(
     "#description"
   ).innerHTML = `${response.data.description}`;
-  document.querySelector(
-    "#wind"
-  ).innerHTML = `Wind: ${response.data.wind.speed}`;
-  document.querySelector(
-    "#humid"
-  ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  document.querySelector("#wind").innerHTML = `${response.data.wind.speed}`;
+  document.querySelector("#humid").innerHTML = `${response.data.main.humidity}`;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
 let enterCity = document.querySelector("#newLocale");
