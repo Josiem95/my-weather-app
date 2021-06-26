@@ -11,7 +11,7 @@
     />
     <meta charset="UTF-8" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link href="src/styles.css" />
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
 
   <body>
@@ -19,7 +19,7 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-      <form class="d-flex search-bar" id="newLocale">
+       <form class="d-flex search-bar" id="newLocale">
         <input
           type="text"
           placeholder="Enter a city..."
@@ -27,18 +27,18 @@
           autofocus
           id="enter-city"
          />
-</form><button id="coordsUrl">Current Location</button>
-      
+      </form><button id="coordsUrl">Current Location</button>
   <div class="container">
         <div class="row">
           <span class="col-6" id="currentTemp">
-            19°
-            <img src="images/sun.png" 
-            alt="Clear"
-            width="180"
-          id="current-icon"/>
           
-        <p class="units">
+          <img src="images/sun.png" 
+          id="current-icon"
+          alt="Clear"
+          width="180" 
+        />
+
+          <p class="units">
           <a href="#" id="celsiusLink">°C</a> | 
           <a href="#" id="fahrLink">°F</a>
         </p></span>
@@ -55,7 +55,7 @@
             
             </li>
             <li>
-     Humidity:<span id="humid">41</span>%
+        Humidity: <span id="humid">41</span>%
             </li>
             <li>
         Wind: <span id="wind">8 </span>km/h
@@ -107,8 +107,7 @@
             </div>
             <footer>Designed by <a href="https://github.com/Josiem95/my-weather-app">Josie Mortison</a></footer>
             </div>
-       
-    <script src="src/index.js"></script>
+
+    <script src="index.js"></script>
   </body>
 </html>
-
