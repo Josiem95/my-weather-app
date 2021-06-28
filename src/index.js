@@ -79,11 +79,11 @@ function displayWeather(response) {
   document.querySelector("#humid").innerHTML = `${response.data.main.humidity}`;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
-  iconElement.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+  document.querySelector(
+    "#currentIcon"
+  ).innerHTML = `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png" />`;
 }
+
 let enterCity = document.querySelector("#newLocale");
 enterCity.addEventListener("submit", handleSubmit);
 
