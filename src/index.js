@@ -70,7 +70,7 @@ function displayWeather(response) {
   let iconElement = document.querySelector("#current-icon");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#currentTemp").innerHTML = `${Math.round(
-    response.data.main.temp
+    celsiusTemperature
   )}°`;
   document.querySelector(
     "#description"
@@ -82,7 +82,34 @@ function displayWeather(response) {
   document.querySelector(
     "#currentIcon"
   ).innerHTML = `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png" />`;
+
+  celsiusTemperature = response.data.main.temp;
 }
+
+function displayFTemp(event) {
+  event.preventDefault();
+  let fahrTemperature = (celsiusTemperature * 9) / 5 + 32;
+  cLink.classList.remove("active");
+  fLink.classList.add("active");
+  let temperatureElement = document.querySelector("#currentTemp");
+  temperatureElement.innerHTML = Math.round(fahrTemperature);
+}
+
+function displayCTemp(event) {
+  event.preventDefault;
+  cLink.classList.add("active");
+  fLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#currentTemp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let fLink = document.querySelector("#fahrLink");
+fLink.addEventListener("click", displayFTemp);
+
+let cLink = document.querySelector("#celsiusLink");
+cLink.addEventListener("click", displayCTemp);
+
+let celsiusTemperature = null;
 
 let enterCity = document.querySelector("#newLocale");
 enterCity.addEventListener("submit", handleSubmit);
