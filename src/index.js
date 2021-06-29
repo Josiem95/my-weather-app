@@ -67,7 +67,6 @@ function getCurrentCity(event) {
 }
 
 function displayWeather(response) {
-  let iconElement = document.querySelector("#current-icon");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#currentTemp").innerHTML = `${Math.round(
     celsiusTemperature
