@@ -91,7 +91,7 @@ function displayFTemp(event) {
   cLink.classList.remove("active");
   fLink.classList.add("active");
   let temperatureElement = document.querySelector("#currentTemp");
-  temperatureElement.innerHTML = Math.round(fahrTemperature);
+  temperatureElement.innerHTML = `${Math.round(fahrTemperature)}°`;
 }
 
 function displayCTemp(event) {
@@ -99,7 +99,7 @@ function displayCTemp(event) {
   cLink.classList.add("active");
   fLink.classList.remove("active");
   let temperatureElement = document.querySelector("#currentTemp");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°`;
 }
 
 let fLink = document.querySelector("#fahrLink");
