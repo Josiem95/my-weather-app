@@ -40,6 +40,14 @@ currentDay.innerHTML = `${day} ${month} ${date}, ${hour}:${minute}`;
 
 //
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function searchCity(city) {
   let apiKey = "9d57b8dfa7c27b11f72c0eaad45b73c1";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -112,26 +120,34 @@ function displayCTemp(event) {
 }
 
 function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Weds", "Thurs", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
   
             <div class="col days">
-              ${day}
-              <img src="images/tarotrain.jpg" width="70px" />
-              <div class="temp">19° | 9°</div>
+              ${formatDay(forecastDay.dt)}
+              <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" />
+              </br>
+              <span class="temp-max">${Math.round(
+                forecastDay.temp.max
+              )}° | </span>
+              <span class="temp-min">${Math.round(forecastDay.temp.min)}°</span>
             </div>
 `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
 let fLink = document.querySelector("#fahrLink");
 fLink.addEventListener("click", displayFTemp);
 
