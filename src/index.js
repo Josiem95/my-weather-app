@@ -83,6 +83,7 @@ function displayWeather(response) {
   ).innerHTML = `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png" />`;
 
   celsiusTemperature = response.data.main.temp;
+  displayForecast();
 }
 
 function displayFTemp(event) {
@@ -100,6 +101,27 @@ function displayCTemp(event) {
   fLink.classList.remove("active");
   let temperatureElement = document.querySelector("#currentTemp");
   temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°`;
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Weds", "Thurs", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  
+            <div class="col days">
+              ${day}
+              <img src="images/tarotrain.jpg" width="70px" />
+              <div class="temp">19° | 9°</div>
+            </div>
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 let fLink = document.querySelector("#fahrLink");
