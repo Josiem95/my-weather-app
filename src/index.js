@@ -108,7 +108,7 @@ function displayFTemp(event) {
   cLink.classList.remove("active");
   fLink.classList.add("active");
   let temperatureElement = document.querySelector("#currentTemp");
-  temperatureElement.innerHTML = `${Math.round(fahrTemperature)}°`;
+  temperatureElement.innerHTML = `${Math.round(fahrTemperature)}°F`;
 }
 
 function displayCTemp(event) {
@@ -116,7 +116,7 @@ function displayCTemp(event) {
   cLink.classList.add("active");
   fLink.classList.remove("active");
   let temperatureElement = document.querySelector("#currentTemp");
-  temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°`;
+  temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
 }
 
 function displayForecast(response) {
@@ -132,6 +132,7 @@ function displayForecast(response) {
   
             <div class="col days">
               ${formatDay(forecastDay.dt)}
+              </br>
               <img src="http://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon
               }@2x.png" />
@@ -148,6 +149,7 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
 let fLink = document.querySelector("#fahrLink");
 fLink.addEventListener("click", displayFTemp);
 

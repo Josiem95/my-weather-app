@@ -1,8 +1,9 @@
 body {
   background: #155263;
+  font-family: "Miller Text", Georgia, serif;
 }
 button {
-  background-color: #fff;
+  background-color: #f5cf84;
   border-radius: 20px;
   border: 2px solid #155263;
   transition: all 200ms ease;
@@ -13,6 +14,30 @@ button:hover {
   opacity: 1;
   background-color: #fcbf49;
   color: #fff;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 20px;
+  font-weight: 10;
+}
+
+hr {
+  background-color: transparent;
+  border-top: 9px dotted #155263;
+}
+
+footer {
+  font-size: 12px;
+  padding: 25px 0px 0px;
+  color: #155263;
+  text-align: center;
+}
+
+.container {
+  height: 19rem;
 }
 
 .form-control {
@@ -30,6 +55,7 @@ button:hover {
 }
 .card {
   border: 5px solid #fcbf49;
+  background-color: #f5cf84;
 }
 
 .currentTemp {
@@ -38,52 +64,33 @@ button:hover {
 .row {
   font-size: 35px;
   font-weight: bolder;
-  text-align: right;
+  text-align: center;
 }
-
-body {
-  font-family: "Miller Text", Georgia, serif;
+.col {
+  font-size: 60px;
 }
-ul {
-  list-style-type: none;
-  text-align: right;
-  font-size: 15px;
-  margin-top: 20px;
-  font-weight: 10;
-}
-
 .time {
-  text-align: right;
+  text-align: center;
   font-size: 20px;
+  margin-top: 0px;
 }
 
-hr {
-  background-color: transparent;
-  border-top: 9px dotted #155263;
-}
 .days {
   text-align: center;
-  font-size: 30px;
-}
-
-.temp {
-  font-size: 15px;
-  text-align: center;
-}
-footer {
-  font-size: 12px;
-  padding: 25px 0px 0px;
-  color: #155263;
-  text-align: center;
+  font-size: 28px;
 }
 
 .units {
-  text-align: left;
-  font-size: 20px;
-  color: #155263;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 0px;
 }
 .units .active {
-  color: #fcbf49;
+  color: #155263;
   cursor: default;
   text-decoration: none;
+}
+
+.temp-min {
+  color: rgb(77, 74, 74);
 }
